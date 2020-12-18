@@ -1,30 +1,38 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <header-bar></header-bar>
   </div>
-  <router-view/>
+  <div class="main-content">
+    <todo-list></todo-list>
+  </div>
 </template>
 
+<script>
+import HeaderBar from "./components/HeaderBar.vue";
+import TodoList from "./components/TodoList.vue";
+export default {
+  components: {
+    HeaderBar,
+    TodoList,
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@330&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: "Roboto", consolas, tahoma;
 }
 
-#nav {
-  padding: 30px;
+body {
+  background-color: rgb(167, 167, 167);
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.main-content {
+  margin-top: 6em;
 }
 </style>
